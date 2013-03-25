@@ -8,59 +8,22 @@
 var Sequelize = require("sequelize");
 var util = require('util');
 
-var sequelize = new Sequelize('wp', 'root', 'RageRocks' , { host: "127.0.0.1" , port :3306} );
+var sequelize = new Sequelize('wp', 'root', 'admin@123' , { host: "127.0.0.1" , port :3306} );
 
-var WPException = sequelize.define('WPException' , {
-    Exception_Id : { type : Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
-    Exception_message : Sequelize.TEXT,
-    Is_Background : Sequelize.TEXT,
-    Custom_message : Sequelize.TEXT ,
-    Stacktrace : Sequelize.TEXT ,
-    Time : Sequelize.DATE ,
-    Os_version : Sequelize.STRING ,
-    Modelname : Sequelize.STRING,
-    Appversion : Sequelize.STRING,
-    Phone_id : Sequelize.STRING ,
-    Network_Present : Sequelize.BOOLEAN ,
-    Network_Type : Sequelize.STRING ,
-    Current_Memory : Sequelize.INTEGER,
-    Peak_Memory : Sequelize.INTEGER,
-    Remote_IP : Sequelize.STRING
-});
-
-var NewException = function (exception_message , stacktrace  , custom_message , os_version , modelname , appversion , phone_id , time_val , network_present , network_type , current_memory , peak_memory, is_background){
-    var newEx = WPException.build( {Exception_message : exception_message,
-        Stacktrace : stacktrace,
-        Custom_message : custom_message,
-        Os_version : os_version,
-        Modelname : modelname,
-        Is_Background : is_background,
-        Appversion : appversion,
-        Time : new Date(),
-        Phone_id : phone_id,
-        Network_Present : Boolean(network_present),
-        Network_Type : network_type ,
-        Current_Memory :current_memory,
-        Peak_Memory : peak_memory });
-    newEx.save().error(function(error){
-        console.log("Failed with error" + util.inspect(error));
-    });
-}
-
-var WPLog = sequelize.define( 'WPLog', {
+var PushLog = sequelize.define( 'PushLog', {
     Log_Id : { type : Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
-    Log_message : Sequelize.TEXT,
-    Is_Background : Sequelize.TEXT,
     Time : Sequelize.DATE,
-    Os_version : Sequelize.STRING ,
-    Modelname : Sequelize.STRING,
-    Appversion : Sequelize.STRING,
     Phone_id : Sequelize.STRING,
-    Network_Present : Sequelize.BOOLEAN,
-    Network_Type : Sequelize.STRING,
-    Current_Memory : Sequelize.INTEGER,
-    Peak_Memory : Sequelize.INTEGER,
-    Remote_IP : Sequelize.STRING
+    Rsid:Sequelize.STRING,
+    MetaHandle:Sequelize.STRING,
+    EventName:Sequelize.STRING,
+    PayLoad:Sequelize.STRING,
+    CurrentPushUri:Sequelize.STRING,
+    OldPushUri:Sequelize.STRING,
+    StatusCode:Sequelize.INTEGER,
+    Headers:Sequelize.String,
+    Body:Sequelize.String
+
 });
 
 var NewLog = function (log_message , os_version , modelname , appversion , phone_id , time_val , network_present , network_type , current_memory , peak_memory, is_background) {

@@ -13,7 +13,67 @@ var util = require('util');
 var Sequelize = require("sequelize")
 var schema = require("./schema.js")
 
-app.configure(function(){
+
+
+
+var    PushToTile= function()
+                    {
+
+                    }
+
+
+
+
+
+
+var PushRegistration=function(Time,Phone_Id,Rsid,MetaHandle,deviceStatus,Uri)
+{
+
+}
+
+
+var CallbackRegsitrationresponse=function()
+{
+
+}
+
+
+     /*Inside SendPush to pushURI https://db3.notify.live.net/unthrottledthirdparty/01.00/AAG5OsqiRLMCQ72PItGD98zIAgAAAAADEAAAAAQUZm52OkJCMjg1QTg1QkZDMkUxREQ
+    [2013-03-25 15:16:22.994] [DEBUG] [MOBILE PUSH] - { pushId: 2,
+    payload:
+    { TileCount: 0,
+        pushtype: 1,
+        devicetoken: 'talk.tov1JPMl0yCMrv7I7CjHxvh++gtps=Windows',
+        clientVersion: '0.0.4.7',
+        TileBackgroundImage: 'assets/tiles/medium/front/BackgroundImage_0.png',
+        TileSmallBackgroundImage: 'assets/tiles/small/SmallBackgroundImage_0.png',
+        TileWideBackgroundImage: 'assets/tiles/large/front/WideBackgroundImage_0.png',
+        TileTitle: 'Talk.to',
+        TileTemplate: 1,
+        devicetype: 'windows',
+        TileId: '/InermediatePage.xaml' },
+
+       */
+
+ /*
+Tile Push Response Success : status code 200 Notification State : Received Subscription State : Active Device Connection Status : Connected for request { TileCount: 0,
+    pushtype: 1,
+    devicetoken: 'talk.tov1JPMl0yCMrv7I7CjHxvh++gtps=Windows',
+    clientVersion: '0.0.4.7',
+    TileBackgroundImage: 'assets/tiles/medium/front/BackgroundImage_0.png',
+    TileSmallBackgroundImage: 'assets/tiles/small/SmallBackgroundImage_0.png',
+    TileWideBackgroundImage: 'assets/tiles/large/front/WideBackgroundImage_0.png',
+    TileTitle: 'Talk.to',
+    TileTemplate: 1,
+    devicetype: 'windows' } sent to URI https://db3.notify.live.net/unthrottledthirdparty/01.00/AAG5OsqiRLMCQ72PItGD98zIAgAAAAADEAAAAAQUZm52OkJCMjg1QTg1QkZDMkUxREQ
+   */
+
+
+                   /*[2013-03-25 15:16:39.581] [DEBUG] [MOBILE PUSH] - [PUSH DEVICE] DeviceId talk.tov1JPMl0yCMrv7I7CjHxvh++gtps=Windows SessionId c2beee7f-567d-4884-8512-7601864fda83 metaHandle gxsaurav : Client connected to ssc, app in foreground true
+                    */
+
+
+    app.configure(function(){
     app.use(express.bodyParser());
 });
 
@@ -21,7 +81,7 @@ app.get('/PostEx', function(req, res){
     if ( req.query.exception_message && req.query.stacktrace  && req.query.custom_message && req.query.os_version && req.query.modelname && req.query.appversion && req.query.phone_id && req.query.time_val && req.query.network_present && req.query.network_type && req.query.current_memory && req.query.peak_memory){
         schema.AddException(req.query.exception_message , req.query.stacktrace  , req.query.custom_message , req.query.os_version , req.query.modelname , req.query.appversion , req.query.phone_id , req.query.time_val , req.query.network_present , req.query.network_type , req.query.current_memory , req.query.peak_memory, req.query.is_background);
         res.send('{ }');
-    }
+   }
     res.send('Error');
 });
 
@@ -84,6 +144,6 @@ function PostMetric(metric_name){
 }
 
 
-app.listen(80);
+app.listen(1029);
 console.log('Listening on port 80 ');
 
