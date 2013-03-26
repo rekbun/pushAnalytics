@@ -17,14 +17,15 @@ var schema = require("./schema.js")
 var chainer = new Sequelize.Utils.QueryChainer;
 
 
-
-var SaveToDB= function(){
-
-                            chainer.runSerially().success(function() {
-
-                        })
-
-                       }
+var listOfLogs= [];
+var SaveToDB= function()
+              {
+                  while(listOfLogs.length>0)
+                  {
+                      entry=listOfLogs.pop();
+                      schema.AddLog(entry.Time, entry.Phone_Id,entry.Rsid,entry.MetaHandle,entry.EventName,entry.CurrentPushUri,entry.OldPushUri,entry.StatusCode,entry.NotificationState,entry.SubscriptionState,entry.DeviceConnectionStatus,entry.PayLoad,entry.Headers,entry.Body,entry.Message);
+                  }
+              }
 
 var cnt=0;
 var BulkSaveCount=50;
@@ -33,16 +34,37 @@ setInterval(SaveToDB,9000);
 
 var AddOrSaveToDB= function(time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,headers,body,message)
                     {
-
-                        chainer.add(schema.AddLog(time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,headers,body,message));
+                         var newEntry={
+                             Time : time,
+                             Phone_id : phone_Id,
+                             Rsid:rsid,
+                             MetaHandle:metaHandle,
+                             EventName:eventName,
+                             PayLoad:payLoad,
+                             CurrentPushUri:currentPushUri,
+                             OldPushUri:oldPushUri,
+                             StatusCode:statusCode,
+                             NotificationState:notificationState,
+                             SubscriptionState:subscriptionState,
+                             DeviceConnectionStatus:deviceConnectionStatus,
+                             Headers:headers,
+                             Body:body,
+                             Message:message
+                         }
+                        listOfLogs.push(newEntry);
+                        //schema.AddLog(time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,headers,body,message);
 
                         cnt++
 
 
                         if(cnt==BulkSaveCount)
                         {
-
-                            chainer.runSerially().on('success', function() {});
+                          while(listOfLogs.length>0)
+                          {
+                              entry=listOfLogs.pop();
+                              schema.AddLog(entry.Time, entry.Phone_id,entry.Rsid,entry.MetaHandle,entry.EventName,entry.CurrentPushUri,entry.OldPushUri,entry.StatusCode,entry.NotificationState,entry.SubscriptionState,entry.DeviceConnectionStatus,entry.PayLoad,entry.Headers,entry.Body,entry.Message);
+                          }
+                            //    chainer.run().success(function() {});
                         }
 
                     }
@@ -127,4 +149,29 @@ var AppBackground = function(time,phone_Id,rsid,metaHandle,eventName,message){
 
 
 
-AppBackground(Date.getDate(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
+AppBackground(new Date(),"aa","sddd","asdd","qweqwe","this is a test");
