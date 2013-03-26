@@ -31,10 +31,10 @@ var BulkSaveCount=50;
 
 setInterval(SaveToDB,9000);
 
-var AddOrSaveToDB= function(time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,message)
+var AddOrSaveToDB= function(phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,message)
                     {
                          var newEntry={
-                             Time : time,
+                             Time : new Date(),
                              Phone_id : phone_Id,
                              Rsid:rsid,
                              MetaHandle:metaHandle,
@@ -59,7 +59,7 @@ var AddOrSaveToDB= function(time,phone_Id,rsid,metaHandle,eventName,currentPushU
                           while(listOfLogs.length>0)
                           {
                               entry=listOfLogs.pop();
-                              schema.AddLog(entry.Time, entry.Phone_id,entry.Rsid,entry.MetaHandle,entry.EventName,entry.CurrentPushUri,entry.OldPushUri,entry.StatusCode,entry.NotificationState,entry.SubscriptionState,entry.DeviceConnectionStatus,entry.PayLoad,entry.Message);
+                              schema.AddLog(entry.Time,entry.Phone_id,entry.Rsid,entry.MetaHandle,entry.EventName,entry.CurrentPushUri,entry.OldPushUri,entry.StatusCode,entry.NotificationState,entry.SubscriptionState,entry.DeviceConnectionStatus,entry.PayLoad,entry.Message);
                           }
                             //    chainer.run().success(function() {});
                         }
@@ -67,9 +67,9 @@ var AddOrSaveToDB= function(time,phone_Id,rsid,metaHandle,eventName,currentPushU
                     }
 
 
-var  PushToTileResponse= function(time,phone_Id,rsid,metaHandle,eventName,statusCode,notificationState,subscriptionState,deviceConnectionStatus,pushUri)
+var  PushToTileResponse= function(phone_Id,rsid,metaHandle,eventName,statusCode,notificationState,subscriptionState,deviceConnectionStatus,pushUri)
                            {
-                                AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,pushUri,null,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,null);
+                                AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,pushUri,null,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,null);
                            }
 
 
@@ -77,36 +77,36 @@ var  PushToTileResponse= function(time,phone_Id,rsid,metaHandle,eventName,status
 
 
 
-var PushRegistration=function(time,phone_Id,rsid,metaHandle,eventName,deviceStatus,pushUri)
+var PushRegistration=function(phone_Id,rsid,metaHandle,eventName,deviceStatus,pushUri)
                      {
-                        AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,pushUri,null,null,null,null,deviceStatus,payLoad,null);
+                        AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,pushUri,null,null,null,null,deviceStatus,payLoad,null);
                      }
 
 
-var CallbackRegstrationResponse=function(time,phone_Id,rsid,metaHandle,eventName,statusCode,deviceConnectionStatus,subscriptionStatus)
+var CallbackRegstrationResponse=function(phone_Id,rsid,metaHandle,eventName,statusCode,deviceConnectionStatus,subscriptionStatus)
                                  {
-                                     AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,null,null,statusCode,null,subscriptionStatus,deviceConnectionStatus,null,null);
+                                     AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,null,null,statusCode,null,subscriptionStatus,deviceConnectionStatus,null,null);
                                  }
 
 
 
-var SendPushToUri= function(time,phone_Id,rsid,metaHandle,eventName,pushUri,payLoad)
+var SendPushToUri= function(phone_Id,rsid,metaHandle,eventName,pushUri,payLoad)
                    {
-                           AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,pushUri,null,null,null,null,null,payLoad,null);
+                           AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,pushUri,null,null,null,null,null,payLoad,null);
                    }
 
 
 
-var AppForeground = function(time,phone_Id,rsid,metaHandle,eventName,message){
+var AppForeground = function(phone_Id,rsid,metaHandle,eventName,message){
 
-                        AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,null,null,null,null,null,null,null,message);
+                        AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,null,null,null,null,null,null,null,message);
 
                     }
 
 
-var AppBackground = function(time,phone_Id,rsid,metaHandle,eventName,message){
+var AppBackground = function(phone_Id,rsid,metaHandle,eventName,message){
 
-                        AddOrSaveToDB(time,phone_Id,rsid,metaHandle,eventName,null,null,null,null,null,null,null,message);
+                        AddOrSaveToDB(phone_Id,rsid,metaHandle,eventName,null,null,null,null,null,null,null,message);
 
                     }
 
@@ -119,3 +119,5 @@ exports.CallbackRegistrationResponse=CallbackRegstrationResponse;
 exports.SendPushToUri=SendPushToUri;
 exports.AppForeground =AppForeground;
 exports.AppBackground =AppBackground;
+
+

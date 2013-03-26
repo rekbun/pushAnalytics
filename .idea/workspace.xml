@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="61a91af4-2d48-466c-98af-7c14391306e5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.js" afterPath="$PROJECT_DIR$/schema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pushAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364286126811" ignored="false" />
+    <file path="/main.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364286788404" ignored="false" />
     <file path="/Dummy.txt" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364205245366" ignored="false" />
     <file path="/schema.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364284372658" ignored="false" />
     <file path="/a.dummy" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364272664488" ignored="false" />
@@ -29,19 +31,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="schema.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="schema.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="23" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0">
+            <state line="45" column="4" selection-start="1677" selection-end="1677" vertical-scroll-proportion="0.9357278">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="0" selection-start="0" selection-end="4659" vertical-scroll-proportion="0.94186044">
+            <state line="61" column="40" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#156#0" expanded="false" />
               </folding>
@@ -76,8 +78,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/schema.js" />
         <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/schema.js" />
       </list>
     </option>
   </component>
@@ -394,13 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/schema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="1425" selection-end="1425" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -410,10 +405,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="0" selection-end="4659" vertical-scroll-proportion="0.94186044">
+        <state line="61" column="40" selection-start="2229" selection-end="2229" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#156#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="4" selection-start="1677" selection-end="1677" vertical-scroll-proportion="0.9357278">
+          <folding />
         </state>
       </provider>
     </entry>

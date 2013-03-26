@@ -8,7 +8,7 @@
 var Sequelize = require("sequelize");
 var util = require('util');
 
-var sequelize = new Sequelize('wp', 'talkto', 'sscwindowsphone' , { host: "sscwpdb.cyy5hdjwfoo4.us-east-1.rds.amazonaws.com" , port :3306} );
+var sequelize = new Sequelize('WP', 'talkto', 'sscwindowsphone' , { host: "sscwpdb.cyy5hdjwfoo4.us-east-1.rds.amazonaws.com" , port :3306} );
 
 var PushLog = sequelize.define( 'PushLog', {
     Log_Id : { type : Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
