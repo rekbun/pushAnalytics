@@ -24,13 +24,11 @@ var PushLog = sequelize.define( 'PushLog', {
     NotificationState:Sequelize.STRING,
     SubscriptionState:Sequelize.STRING,
     DeviceConnectionStatus:Sequelize.STRING,
-    Headers:Sequelize.STRING,
-    Body:Sequelize.TEXT,
     Log_Message:Sequelize.TEXT
 
 });
            //Time,Phone_Id,Rsid,MetaHandle,StatusCode,NotificationState,SubscriptionState,DeviceConnectionStatus,PayLoad
-var NewLog = function (time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,headers,body,message) {
+var NewLog = function (time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,message,payLoad) {
     var newLg = PushLog.build( {
 
         Time : time,
@@ -45,8 +43,6 @@ var NewLog = function (time,phone_Id,rsid,metaHandle,eventName,currentPushUri,ol
         NotificationState:notificationState,
         SubscriptionState:subscriptionState,
         DeviceConnectionStatus:deviceConnectionStatus,
-        Headers:headers,
-        Body:body,
         Message:message
 
        });

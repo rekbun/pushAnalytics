@@ -7,9 +7,9 @@
     </list>
     <ignored path="pushAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364282952002" ignored="false" />
+    <file path="/main.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364284768182" ignored="false" />
     <file path="/Dummy.txt" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364205245366" ignored="false" />
-    <file path="/schema.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364275857544" ignored="false" />
+    <file path="/schema.js" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364284372658" ignored="false" />
     <file path="/a.dummy" changelist="61a91af4-2d48-466c-98af-7c14391306e5" time="1364272664488" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
       <file leaf-file-name="schema.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="28" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0">
+            <state line="30" column="4" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -42,7 +42,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="34" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.5499368">
+            <state line="115" column="24" selection-start="4434" selection-end="4434" vertical-scroll-proportion="0.9620733">
               <folding>
                 <element signature="e#0#156#0" expanded="false" />
               </folding>
@@ -279,12 +279,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/main.js</url>
-          <line>66</line>
+          <line>64</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/main.js</url>
-          <line>53</line>
+          <line>52</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -368,14 +368,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/schema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="28" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0">
+        <state line="30" column="4" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="34" selection-start="4251" selection-end="4251" vertical-scroll-proportion="0.5499368">
+        <state line="115" column="24" selection-start="4434" selection-end="4434" vertical-scroll-proportion="0.9620733">
           <folding>
             <element signature="e#0#156#0" expanded="false" />
           </folding>
