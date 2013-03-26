@@ -21,23 +21,35 @@ var PushLog = sequelize.define( 'PushLog', {
     CurrentPushUri:Sequelize.STRING,
     OldPushUri:Sequelize.STRING,
     StatusCode:Sequelize.INTEGER,
-    Headers:Sequelize.String,
-    Body:Sequelize.String
+    NotificationState:Sequelize.STRING,
+    SubscriptionState:Sequelize.STRING,
+    DeviceConnectionStatus:Sequelize.STRING,
+    Headers:Sequelize.STRING,
+    Body:Sequelize.STRING,
+    Log_Message:Sequelize.STRING
 
 });
+           //Time,Phone_Id,Rsid,MetaHandle,StatusCode,NotificationState,SubscriptionState,DeviceConnectionStatus,PayLoad
+var NewLog = function (time,phone_Id,rsid,metaHandle,eventName,currentPushUri,oldPushUri,statusCode,notificationState,subscriptionState,deviceConnectionStatus,payLoad,headers,body,message) {
+    var newLg = WPLog.build( {
 
-var NewLog = function (log_message , os_version , modelname , appversion , phone_id , time_val , network_present , network_type , current_memory , peak_memory, is_background) {
-    var newLg = WPLog.build( {  Log_message : log_message,
-        Os_version : os_version,
-        Modelname : modelname,
-        Is_Background : is_background,
-        Appversion : appversion,
-        Phone_id : phone_id,
-        Time : new Date(),
-        Network_Present : Boolean(network_present),
-        Network_Type : network_type,
-        Current_Memory : current_memory,
-        Peak_Memory : peak_memory});
+        Time : time,
+        Phone_id : phone_Id,
+        Rsid:rsid,
+        MetaHandle:metaHandle,
+        EventName:eventName,
+        PayLoad:payLoad,
+        CurrentPushUri:currentPushUri,
+        OldPushUri:oldPushUri,
+        StatusCode:statusCode,
+        NotificationState:notificationState,
+        SubscriptionState:subscriptionState,
+        DeviceConnectionStatus:deviceConnectionStatus,
+        Headers:headers,
+        Body:body,
+        Message:message
+
+       });
     newLg.save().error(function(error){
         console.log('Failed to save log'+ util.inspect(error));
     });
