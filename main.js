@@ -112,3 +112,10 @@ var AppBackground = function(time,phone_Id,rsid,metaHandle,eventName,message){
 
 
 
+
+exports.PushRegistration = PushRegistration;
+exports.PushToTileResponse= PushToTileResponse;
+exports.CallbackRegistrationResponse=CallbackRegstrationResponse;
+exports.SendPushToUri=SendPushToUri;
+exports.AppForeground =AppForeground;
+exports.AppBackground =AppBackground;
