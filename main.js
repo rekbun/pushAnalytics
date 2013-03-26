@@ -14,7 +14,6 @@ var Sequelize = require("sequelize")
 var schema = require("./schema.js")
 
 
-var chainer = new Sequelize.Utils.QueryChainer;
 
 
 var listOfLogs= [];
