@@ -1,4 +1,5 @@
 pushAnalytics
 =============
-used for logging pushs on ssc server on nodejs
-created by rakesh
+used for logging push details on ssc server on nodejs
+
+
